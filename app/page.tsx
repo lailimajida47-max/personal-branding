@@ -146,7 +146,7 @@ export default function Home() {
 
               <span className="w-fit rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700">
                 XI RPL 1
-              </span>
+              </span>vgit remote add origin https://github.com/lailimajida47-max/personal-branding.git
             </div>
           </div>
         </div>
