@@ -287,7 +287,8 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             {/* Instagram */}
             <a
-              href="https://instagram.com/lailiima"
+              href="https://instagram.com/lailiiiima"
+
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition hover:bg-sky-400"
