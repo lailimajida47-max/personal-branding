@@ -11,33 +11,18 @@ export default function Home() {
           </h1>
 
           <div className="hidden gap-6 text-sm font-medium md:flex">
-            <a href="#home" className="transition hover:text-sky-600">
-              Home
-            </a>
-            <a href="#about" className="transition hover:text-sky-600">
-              About
-            </a>
-            <a href="#education" className="transition hover:text-sky-600">
-              Education
-            </a>
-            <a href="#skills" className="transition hover:text-sky-600">
-              Skills
-            </a>
-            <a href="#projects" className="transition hover:text-sky-600">
-              Projects
-            </a>
-            <a href="#contact" className="transition hover:text-sky-600">
-              Contact
-            </a>
+            <a href="#home" className="transition hover:text-sky-600">Home</a>
+            <a href="#about" className="transition hover:text-sky-600">About</a>
+            <a href="#education" className="transition hover:text-sky-600">Education</a>
+            <a href="#skills" className="transition hover:text-sky-600">Skills</a>
+            <a href="#projects" className="transition hover:text-sky-600">Projects</a>
+            <a href="#contact" className="transition hover:text-sky-600">Contact</a>
           </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section
-        id="home"
-        className="flex min-h-screen items-center px-6 pt-20"
-      >
+      <section id="home" className="flex min-h-screen items-center px-6 pt-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div>
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-sky-500">
@@ -146,7 +131,7 @@ export default function Home() {
 
               <span className="w-fit rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700">
                 XI RPL 1
-              </span>vgit remote add origin https://github.com/lailimajida47-max/personal-branding.git
+              </span>
             </div>
           </div>
         </div>
@@ -213,6 +198,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {/* Personal Branding */}
             <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
               <div className="flex h-40 items-center justify-center bg-sky-100">
                 <span className="text-5xl">💻</span>
@@ -234,6 +220,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Aplikasi Daftar Belanja */}
             <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
               <div className="flex h-40 items-center justify-center bg-sky-100">
                 <span className="text-5xl">🛍️</span>
@@ -255,6 +242,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Website Berita */}
             <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
               <div className="flex h-40 items-center justify-center bg-sky-100">
                 <span className="text-5xl">📰</span>
@@ -271,7 +259,7 @@ export default function Home() {
                 </p>
 
                 <p className="mt-5 text-sm font-semibold text-sky-600">
-                  HTML · CSS · JavaScript 
+                  HTML · CSS · JavaScript
                 </p>
               </div>
             </div>
@@ -296,14 +284,33 @@ export default function Home() {
             bisa terhubung dan berbagi pengalaman.
           </p>
 
-          <a
-            href="https://instagram.com/lailiima"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-block rounded-full bg-sky-500 px-8 py-3 font-semibold text-white transition hover:bg-sky-400"
-          >
-            Instagram
-          </a>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/lailiima"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition hover:bg-sky-400"
+            >
+              Instagram · 200+ Followers
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:laili@gmail.com"
+              className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition hover:bg-sky-400"
+            >
+              Email
+            </a>
+
+            {/* Telepon */}
+            <a
+              href="tel:+6285702506712"
+              className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition hover:bg-sky-400"
+            >
+              Telepon
+            </a>
+          </div>
         </div>
       </section>
 
