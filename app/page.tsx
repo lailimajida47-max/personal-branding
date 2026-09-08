@@ -293,7 +293,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition hover:bg-sky-400"
             >
-              Instagram · 200+ Followers
+              Instagram · 
             </a>
 
             {/* Email */}
