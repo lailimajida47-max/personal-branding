@@ -198,19 +198,25 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
+
             {/* Personal Branding */}
             <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="flex h-40 items-center justify-center bg-sky-100">
-                <span className="text-5xl">💻</span>
+              <div className="relative h-48 w-full bg-sky-100">
+                <Image
+                  src="/project1.jpg"
+                  alt="Project Personal Branding"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div className="p-7">
                 <h3 className="text-xl font-bold">
-                  Personal Branding
+                  Manajemen Siswa
                 </h3>
 
                 <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Website personal branding menggunakan Next.js dan
+                  Konsep manajemen siswa untuk mengelola data siswa dengan melihat data siswa, kelas, rata-rata perkelas, dan pelanggaran dengan menggunakan Next.js dan
                   Tailwind CSS.
                 </p>
 
@@ -222,8 +228,40 @@ export default function Home() {
 
             {/* Aplikasi Daftar Belanja */}
             <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="flex h-40 items-center justify-center bg-sky-100">
-                <span className="text-5xl">🛍️</span>
+              <div className="relative h-48 w-full bg-sky-100">
+                <Image
+                  src="/project2.jpg"
+                  alt="Project Aplikasi Daftar Belanja"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="p-7">
+                <h3 className="text-xl font-bold">
+                  Website Peta sederhana
+                </h3>
+
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Konsep Peta sederhana yang menampilkan lokasi tertentu dengan tampilan interaktif dan mudah di
+                  gunakan.
+                </p>
+
+                <p className="mt-5 text-sm font-semibold text-sky-600">
+                 Next.js · Tailwind CSS 
+                </p>
+              </div>
+            </div>
+
+            {/* Website Berita */}
+            <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="relative h-48 w-full bg-sky-100">
+                <Image
+                  src="/project3.jpg"
+                  alt="Project Website Berita"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div className="p-7">
@@ -232,7 +270,7 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Konsep desain aplikasi daftar belanja yang dibuat
+                 Konsep desain aplikasi daftar belanja yang dibuat
                   menggunakan Figma.
                 </p>
 
@@ -242,27 +280,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Website Berita */}
-            <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-              <div className="flex h-40 items-center justify-center bg-sky-100">
-                <span className="text-5xl">📰</span>
-              </div>
-
-              <div className="p-7">
-                <h3 className="text-xl font-bold">
-                  Website Berita
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Website berita sederhana dengan tampilan responsif
-                  dan modern.
-                </p>
-
-                <p className="mt-5 text-sm font-semibold text-sky-600">
-                  HTML · CSS · JavaScript
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -288,12 +305,11 @@ export default function Home() {
             {/* Instagram */}
             <a
               href="https://instagram.com/lailiiiima"
-
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition hover:bg-sky-400"
             >
-              Instagram · 
+              Instagram
             </a>
 
             {/* Email */}
