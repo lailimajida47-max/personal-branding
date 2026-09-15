@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Branding Portfolio
 
-## Getting Started
+## 👩‍💻 About Me
 
-First, run the development server:
+Hello! My name is **Laili Majida**. I am a student of **Software Engineering (Rekayasa Perangkat Lunak)** at **SMK Negeri 1 Pasuruan**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I am interested in web development, UI design, and modern website development. This portfolio was created as part of my **Kelas Industri** project.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Technologies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- React
+- Next.js
+- Tailwind CSS
+- TypeScript
+- IndexedDB
+- Leaflet Maps
+- Figma
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Projects
 
-## Learn More
+### 1. Manajemen Siswa
 
-To learn more about Next.js, take a look at the following resources:
+A student management project for managing student data, classes, average grades, and violations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Tech:** Next.js, Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 2. Website Peta Sederhana
 
-## Deploy on Vercel
+A simple interactive map website that displays locations in an easy-to-use interface.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Tech:** Next.js, Tailwind CSS, Leaflet Maps
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 3. Aplikasi Daftar Belanja
+
+A shopping list application design created with a simple and user-friendly interface.
+
+**Tech:** Figma, UI Design
+
+### 4. Personal Portfolio
+
+A personal portfolio website containing information about me, my education, skills, and projects.
+
+**Tech:** Next.js, Tailwind CSS
+
+## 🎓 Education
+
+**SMK Negeri 1 Pasuruan**
+
+Rekayasa Perangkat Lunak (RPL)
+
+Class: **XI RPL 1**
+
+## 🛠️ Skills
+
+- React — Intermediate-Advanced
+- Next.js — Intermediate-Advanced
+- TailwindCSS — Intermediate-Advanced
+- IndexedDB — Intermediate
+- Leaflet Maps — Intermediate
+
+## 🌐 Portfolio
+
+Visit my portfolio website:
+
+**https://personal-branding-orpin-xi.vercel.app/**
+
+## 📸 Portfolio Screenshots
+
+### Home
+
+![Home](public/profile.jpg)
+
+### Projects
+
+![Project 1](public/project1.jpg)
+
+![Project 2](public/project2.jpg)
+
+![Project 3](public/project3.jpg)
+
+## 👤 Author
+
+**Laili Majida**
+
+SMK Negeri 1 Pasuruan — Rekayasa Perangkat Lunak
