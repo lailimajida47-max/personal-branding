@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { supabase } from "../lib/supabase";
+import { supabase } from "../../lib/supabase";
 
 type Props = {
   params: Promise<{
@@ -41,7 +41,7 @@ export default async function ProyekDetail({ params }: Props) {
             width={800}
             height={500}
             sizes="(max-width: 768px) 100vw, 800px"
-            className="h-full w-full rounded-xl object-cover shadow-lg"
+            className="h-full w-full rounded-xl object-contain shadow-lg"
           />
         </div>
 
