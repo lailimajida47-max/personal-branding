@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { supabase } from "../lib/supabase";
+import { createClient } from "../lib/supabase-server";
 
 export default async function ProyekPage() {
+  const supabase = await createClient();
+
   const { data: projects, error } = await supabase
     .from("projects")
     .select("id, title, description")
