@@ -1,85 +1,124 @@
-# Personal Branding Portfolio
+Personal Branding - Laili Majida
 
-## 👩‍💻 About Me
+Portfolio website built with Next.js, TypeScript, Tailwind CSS, and Supabase.
 
-Hello! My name is **Laili Majida**. I am a student of **Software Engineering (Rekayasa Perangkat Lunak)** at **SMK Negeri 1 Pasuruan**.
+Production
 
-I am interested in web development, UI design, and modern website development. This portfolio was created as part of my **Kelas Industri** project.
+Website: https://personal-branding-orpin-xi.vercel.app/
 
-## 🚀 Technologies
+GitHub: https://github.com/lailimajida47-max/personal-branding
 
-- React
+Features
+
+Meeting 1 - Personal Branding
+
+- Personal portfolio website
+- Home page
+- About page
+- Education section
+- Skills section
+- Projects section
+- Contact section
+- Responsive design
+
+Meeting 2 - Dynamic Routing
+
+- Dynamic project detail pages
+- Route "/proyek/[id]"
+- Custom not-found page
+- 404 handling for unavailable projects
+
+Meeting 3 - Supabase
+
+- Supabase database integration
+- Projects data stored in Supabase
+- Dynamic project data
+- Project detail pages connected to Supabase
+
+Meeting 4 - Admin CRUD
+
+- Admin login page
+- Admin project management
+- Create, read, update, and delete projects
+- Supabase authentication
+- Admin route protection
+- Project fields:
+  - Title
+  - Description
+  - Image URL
+  - Live URL
+  - Status
+
+Meeting 5 - SEO & Performance
+
+- Static metadata
+- Dynamic metadata
+- Open Graph image
+- "robots.txt"
+- Dynamic "sitemap.xml"
+- Image optimization using "next/image"
+- Descriptive image "alt" attributes
+- Lighthouse testing for Performance, Accessibility, Best Practices, and SEO
+
+Tech Stack
+
 - Next.js
-- Tailwind CSS
 - TypeScript
-- IndexedDB
-- Leaflet Maps
-- Figma
+- Tailwind CSS
+- Supabase
+- Vercel
 
-## 📂 Projects
+Run Locally
 
-### 1. Manajemen Siswa
+Clone this repository and install the dependencies:
 
-A student management project for managing student data, classes, average grades, and violations.
+npm install
 
-**Tech:** Next.js, Tailwind CSS
+Create a ".env.local" file and add the required Supabase environment variables.
 
-### 2. Website Peta Sederhana
+Then run the development server:
 
-A simple interactive map website that displays locations in an easy-to-use interface.
+npm run dev
 
-**Tech:** Next.js, Tailwind CSS, Leaflet Maps
+Open:
 
-### 3. Aplikasi Daftar Belanja
+http://localhost:3000
 
-A shopping list application design created with a simple and user-friendly interface.
+Project Structure
 
-**Tech:** Figma, UI Design
+app/
+├── admin/
+│   ├── login/
+│   └── projects/
+├── proyek/
+│   └── [id]/
+├── projects/
+├── about/
+├── lib/
+├── layout.tsx
+├── opengraph-image.tsx
+├── robots.ts
+└── sitemap.ts
 
-### 4. Personal Portfolio
+SEO Files
 
-A personal portfolio website containing information about me, my education, skills, and projects.
+The project includes:
 
-**Tech:** Next.js, Tailwind CSS
+- "/opengraph-image"
+- "/robots.txt"
+- "/sitemap.xml"
 
-## 🎓 Education
+These files are used to improve search engine optimization and social media sharing.
 
-**SMK Negeri 1 Pasuruan**
+Lighthouse
 
-Rekayasa Perangkat Lunak (RPL)
+Lighthouse was used to test the website before and after the optimization process.
 
-Class: **XI RPL 1**
+Tested categories:
 
-## 🛠️ Skills
+- Performance
+- Accessibility
+- Best Practices
+- SEO
 
-- React — Intermediate-Advanced
-- Next.js — Intermediate-Advanced
-- TailwindCSS — Intermediate-Advanced
-- IndexedDB — Intermediate
-- Leaflet Maps — Intermediate
-
-## 🌐 Portfolio
-
-Visit my portfolio website:
-
-**https://personal-branding-orpin-xi.vercel.app/**
-
-## 📸 Portfolio Screenshots
-
-### Home
-
-![Home](public/profile.jpg)
-
-### Projects
-
-![Project 1](public/project1.jpg)
-
-![Project 2](public/project2.jpg)
-
-![Project 3](public/project3.jpg)
-
-## 👤 Author
-
-**Laili Majida**
-
-SMK Negeri 1 Pasuruan — Rekayasa Perangkat Lunak
+The final Lighthouse score was not lower than the initial score after the SEO and image optimization changes.
