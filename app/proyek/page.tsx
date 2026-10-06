@@ -50,7 +50,7 @@ export default async function ProyekPage() {
             </div>
 
             <div className="p-4">
-              <h2 className="mb-2 text-xl font-semibold">
+              <h2 className="mb-2 text-xl font-semibold text-slate-800">
                 {project.title}
               </h2>
 

@@ -16,6 +16,9 @@ export async function getProjects() {
 export async function addProject(project: {
   title: string;
   description: string;
+  image_url: string;
+  live_url: string;
+  status: string;
 }) {
   const { data, error } = await supabase
     .from("projects")
@@ -32,6 +35,9 @@ export async function updateProject(
   project: {
     title: string;
     description: string;
+    image_url: string;
+    live_url: string;
+    status: string;
   }
 ) {
   const { data, error } = await supabase

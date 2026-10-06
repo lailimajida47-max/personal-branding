@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { supabase } from "../../lib/supabase";
@@ -7,6 +8,33 @@ type Props = {
     id: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { id } = await params;
+
+  const { data: project } = await supabase
+    .from("projects")
+    .select("title, description")
+    .eq("id", Number(id))
+    .single();
+
+  if (!project) {
+    return {
+      title: "Proyek Tidak Ditemukan",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+    },
+  };
+}
 
 export default async function ProyekDetail({ params }: Props) {
   const { id } = await params;

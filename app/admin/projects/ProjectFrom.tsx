@@ -10,6 +10,9 @@ type Project = {
   id: number;
   title: string;
   description: string;
+  image_url?: string;
+  live_url?: string;
+  status?: string;
 };
 
 type ProjectFromProps = {
@@ -25,12 +28,18 @@ export default function ProjectFrom({
 }: ProjectFromProps) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [liveUrl, setLiveUrl] = useState("");
+  const [status, setStatus] = useState("published");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     setTitle(editingProject?.title ?? "");
     setDescription(editingProject?.description ?? "");
+    setImageUrl(editingProject?.image_url ?? "");
+    setLiveUrl(editingProject?.live_url ?? "");
+    setStatus(editingProject?.status ?? "published");
     setMessage("");
   }, [editingProject]);
 
@@ -43,34 +52,32 @@ export default function ProjectFrom({
     setMessage("");
 
     try {
-      if (editingProject) {
-        await updateProject(editingProject.id, {
-          title,
-          description,
-        });
+      const data = {
+        title,
+        description,
+        image_url: imageUrl,
+        live_url: liveUrl,
+        status,
+      };
 
+      if (editingProject) {
+        await updateProject(editingProject.id, data);
         setMessage("Project berhasil diedit!");
       } else {
-        await addProject({
-          title,
-          description,
-        });
-
+        await addProject(data);
         setMessage("Project berhasil ditambahkan!");
       }
 
       setTitle("");
       setDescription("");
+      setImageUrl("");
+      setLiveUrl("");
+      setStatus("published");
 
       onSuccess();
     } catch (error: any) {
-      console.error("ERROR TAMBAH/EDIT PROJECT:", error);
-
-      setMessage(
-        `Gagal: ${
-          error?.message || JSON.stringify(error)
-        }`
-      );
+      console.error(error);
+      setMessage(`Gagal: ${error?.message || "Terjadi kesalahan"}`);
     } finally {
       setLoading(false);
     }
@@ -90,7 +97,7 @@ export default function ProjectFrom({
         placeholder="Judul project"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="mb-4 w-full rounded border border-slate-300 bg-white p-3 text-slate-800 placeholder:text-slate-400"
+        className="mb-4 w-full rounded border border-slate-300 p-3 text-slate-800"
         required
       />
 
@@ -98,10 +105,36 @@ export default function ProjectFrom({
         placeholder="Deskripsi project"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="mb-4 w-full rounded border border-slate-300 bg-white p-3 text-slate-800 placeholder:text-slate-400"
+        className="mb-4 w-full rounded border border-slate-300 p-3 text-slate-800"
         rows={4}
         required
       />
+
+      <input
+        type="url"
+        placeholder="URL gambar project"
+        value={imageUrl}
+        onChange={(e) => setImageUrl(e.target.value)}
+        className="mb-4 w-full rounded border border-slate-300 p-3 text-slate-800"
+        required
+      />
+
+      <input
+        type="url"
+        placeholder="URL live project"
+        value={liveUrl}
+        onChange={(e) => setLiveUrl(e.target.value)}
+        className="mb-4 w-full rounded border border-slate-300 p-3 text-slate-800"
+      />
+
+      <select
+        value={status}
+        onChange={(e) => setStatus(e.target.value)}
+        className="mb-4 w-full rounded border border-slate-300 p-3 text-slate-800"
+      >
+        <option value="published">Published</option>
+        <option value="draft">Draft</option>
+      </select>
 
       <div className="flex gap-2">
         <button
@@ -120,7 +153,7 @@ export default function ProjectFrom({
           <button
             type="button"
             onClick={onCancel}
-            className="rounded bg-slate-500 px-4 py-2 text-white hover:bg-slate-600"
+            className="rounded bg-slate-500 px-4 py-2 text-white"
           >
             Batal
           </button>
@@ -128,9 +161,7 @@ export default function ProjectFrom({
       </div>
 
       {message && (
-        <p className="mt-4 text-sm text-slate-600">
-          {message}
-        </p>
+        <p className="mt-4 text-sm text-slate-600">{message}</p>
       )}
     </form>
   );
