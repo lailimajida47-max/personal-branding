@@ -1,224 +1,268 @@
-export default function Home() {
-  const skills = [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind CSS",
-    "Supabase",
-    "Git & GitHub",
-  ];
+import Image from "next/image";
+import ProjectCard from "./components/ProjectCard";
 
-  const projects = [
-    {
-      title: "Personal Branding",
-      description: "Portfolio website built with Next.js and Tailwind CSS.",
-      image: "/project1.jpg",
-    },
-    {
-      title: "Dashboard Analytics",
-      description: "Modern dashboard with a clean and responsive interface.",
-      image: "/project2.jpg",
-    },
-    {
-      title: "Student Internship",
-      description: "Website concept for student internship information.",
-      image: "/project3.jpg",
-    },
-  ];
-
+function SkillCard({
+  name,
+  level,
+}: {
+  name: string;
+  level: string;
+}) {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f7f6fb] text-zinc-900">
+    <div className="group rounded-3xl border border-sky-100 bg-sky-50 p-7 shadow-sm transition-all duration-500 hover:-translate-y-3 hover:shadow-xl">
+      <div className="mb-5 text-3xl transition duration-500 group-hover:rotate-12 group-hover:scale-125">
+        ✦
+      </div>
 
-      {/* NAVBAR */}
-      <nav className="fixed left-1/2 top-4 z-50 w-[92%] max-w-5xl -translate-x-1/2">
-        <div className="flex items-center justify-between rounded-full border border-zinc-200 bg-white/90 px-5 py-3 shadow-lg backdrop-blur-xl">
+      <h3 className="text-xl font-bold text-slate-800">
+        {name}
+      </h3>
 
-          <a href="#home" className="text-lg font-black">
-            Laili<span className="text-violet-600">.</span>
-          </a>
+      <p className="mt-2 text-sm font-medium text-sky-600">
+        {level}
+      </p>
+    </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-sky-50 text-slate-800">
+
+      {/* Navbar */}
+      <nav className="fixed top-0 z-50 w-full border-b border-sky-100 bg-white/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+
+          <h1 className="text-xl font-bold tracking-wide text-sky-600">
+            Laili<span className="text-slate-800">.</span>
+          </h1>
 
           <div className="hidden gap-6 text-sm font-medium md:flex">
-            <a href="#home" className="transition hover:text-violet-600">
+            <a href="#home" className="transition hover:text-sky-600">
               Home
             </a>
-            <a href="#about" className="transition hover:text-violet-600">
+
+            <a href="#about" className="transition hover:text-sky-600">
               About
             </a>
-            <a href="#skills" className="transition hover:text-violet-600">
+
+            <a href="#education" className="transition hover:text-sky-600">
+              Education
+            </a>
+
+            <a href="#skills" className="transition hover:text-sky-600">
               Skills
             </a>
-            <a href="#projects" className="transition hover:text-violet-600">
+
+            <a href="#projects" className="transition hover:text-sky-600">
               Projects
             </a>
-            <a href="#contact" className="transition hover:text-violet-600">
+
+            <a href="#contact" className="transition hover:text-sky-600">
               Contact
             </a>
           </div>
 
-          <a
-            href="#contact"
-            className="rounded-full bg-zinc-900 px-4 py-2 text-xs font-bold text-white transition hover:bg-violet-600"
-          >
-            Let's Talk
-          </a>
         </div>
       </nav>
 
       {/* HERO */}
       <section
         id="home"
-        className="relative flex min-h-screen items-center px-6 py-28"
+        className="flex min-h-screen items-center px-6 pt-20"
       >
-        <div className="absolute -left-32 top-32 h-72 w-72 animate-pulse rounded-full bg-violet-300/30 blur-3xl" />
+        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
 
-        <div className="absolute -right-32 bottom-10 h-72 w-72 animate-pulse rounded-full bg-fuchsia-300/20 blur-3xl" />
+          <div>
 
-        <div className="relative mx-auto grid w-full max-w-5xl items-center gap-12 md:grid-cols-2">
-
-          {/* HERO TEXT */}
-          <div className="animate-[fadeUp_0.8s_ease-out]">
-
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-sky-600">
-              Hello, I'm
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-sky-500">
+              Personal Portfolio
             </p>
 
-            <h1 className="text-5xl font-black leading-[0.9] tracking-tight sm:text-6xl md:text-7xl">
-              LAILI
-              <br />
-              <span className="text-sky-300">
-                MAJIDA.
+            <h2 className="text-5xl font-bold leading-tight md:text-6xl">
+              Hello, I&apos;m
+
+              <span className="mt-2 block animate-pulse text-sky-600">
+                Laili Majida.
               </span>
-            </h1>
+            </h2>
 
-            <p className="mt-6 max-w-lg text-sm leading-7 text-zinc-600 sm:text-base">
-              A Software Engineering student who loves creating modern,
-              useful, and creative digital experiences.
+            <h3 className="mt-5 text-2xl font-bold text-slate-700">
+              Aspiring Web Developer
+            </h3>
+
+            <p className="mt-4 max-w-xl text-lg leading-8 text-slate-600">
+              Saya ingin mengembangkan karier sebagai Web Developer dan
+              terus meningkatkan kemampuan dalam membuat website yang
+              modern, responsif, dan mudah digunakan.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-4">
+
               <a
                 href="#projects"
-                className="rounded-full bg-zinc-900 px-5 py-3 text-xs font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-sky-600"
+                className="rounded-full bg-sky-600 px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-sky-700 hover:shadow-lg"
               >
-                View Projects
+                Lihat Project
               </a>
 
               <a
-                href="#about"
-                className="rounded-full border border-zinc-300 bg-white px-5 py-3 text-xs font-bold transition duration-300 hover:-translate-y-1 hover:border-sky-400 hover:text-sky-600"
+                href="#contact"
+                className="rounded-full border border-sky-200 bg-white px-7 py-3 text-sm font-semibold text-sky-700 transition duration-300 hover:-translate-y-1 hover:bg-sky-50 hover:shadow-lg"
               >
-                About Me
+                Hubungi Saya
               </a>
+
             </div>
+
           </div>
 
           {/* FOTO */}
-          <div className="relative mx-auto w-full max-w-[290px]">
+          <div className="flex justify-center">
 
-            <div className="absolute -inset-5 animate-pulse rounded-[2.5rem] bg-violet-300/30 blur-2xl" />
+            <div className="flex h-72 w-72 items-center justify-center rounded-full bg-gradient-to-br from-sky-200 via-sky-100 to-white p-4 shadow-xl transition duration-500 hover:scale-105 md:h-96 md:w-96">
 
-            <div className="relative animate-[float_4s_ease-in-out_infinite] overflow-hidden rounded-[2rem] border-[6px] border-white bg-white shadow-2xl">
-              <img
-                src="/profile.jpg"
-                alt="Laili Majida"
-                className="h-auto w-full object-cover"
-              />
-            </div>
+              <div className="relative h-full w-full overflow-hidden rounded-full bg-white shadow-inner">
 
-            <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white px-4 py-3 shadow-xl">
-              <p className="text-[10px] text-zinc-500">
-                Currently
-              </p>
-              <p className="text-xs font-black">
-                XI RPL 1
-              </p>
-            </div>
+                <Image
+                  src="/profile.jpg"
+                  alt="Foto Laili Majida"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover"
+                  priority
+                />
 
-            <div className="absolute -right-4 -top-4 rounded-2xl bg-zinc-900 px-4 py-3 text-white shadow-xl">
-              <p className="text-[10px] text-zinc-400">
-                Based in
-              </p>
-              <p className="text-xs font-bold">
-                Pasuruan
-              </p>
+              </div>
+
             </div>
 
           </div>
-        </div>
-      </section>
 
-      {/* MOVING TEXT */}
-      <section className="overflow-hidden bg-zinc-900 py-4 text-white">
-        <div className="animate-marquee flex w-max gap-10 whitespace-nowrap text-xl font-black">
-          <span>WEB DEVELOPER ✦</span>
-          <span>CREATIVE CODER ✦</span>
-          <span>RPL STUDENT ✦</span>
-          <span>UI DESIGN ✦</span>
-          <span>WEB DEVELOPER ✦</span>
-          <span>CREATIVE CODER ✦</span>
-          <span>RPL STUDENT ✦</span>
-          <span>UI DESIGN ✦</span>
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="px-6 py-20">
-        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-2">
+      <section
+        id="about"
+        className="bg-white px-6 py-24"
+      >
+        <div className="mx-auto max-w-4xl text-center">
 
-          <div className="animate-[fadeUp_0.8s_ease-out]">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-sky-600">
-              About Me
-            </p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
+            About Me
+          </p>
 
-            <h2 className="text-3xl font-black sm:text-4xl">
-              Learning,
-              <br />
-              building,
-              <br />
-              growing.
-            </h2>
-          </div>
+          <h2 className="text-4xl font-bold">
+            Mengenal Saya Lebih Dekat
+          </h2>
 
-          <div className="text-sm leading-7 text-zinc-600 sm:text-base">
-            <p>
-              I'm Laili Majida, a Software Engineering student from
-              SMK Negeri 1 Pasuruan.
-            </p>
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            Halo! Saya Laili Majida, siswa kelas XI RPL di SMK Negeri 1
+            Pasuruan. Saya tertarik dengan dunia teknologi, khususnya
+            pengembangan website dan desain antarmuka. Saat ini saya terus
+            belajar dan mengembangkan kemampuan di bidang web development
+            melalui berbagai project.
+          </p>
 
-            <p className="mt-4">
-              I enjoy learning web development and creating digital
-              projects using Next.js, React, Tailwind CSS, and Supabase.
-            </p>
+        </div>
+      </section>
+
+      {/* EDUCATION */}
+      <section
+        id="education"
+        className="bg-sky-50 px-6 py-24"
+      >
+        <div className="mx-auto max-w-4xl text-center">
+
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
+            Education
+          </p>
+
+          <h2 className="animate-pulse text-4xl font-bold">
+            My Education
+          </h2>
+
+          <div className="mt-10 rounded-3xl border border-sky-100 bg-white p-8 text-left shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+
+              <div>
+
+                <h3 className="animate-pulse text-2xl font-bold">
+                  SMK Negeri 1 Pasuruan
+                </h3>
+
+                <p className="mt-2 font-medium text-sky-600">
+                  Rekayasa Perangkat Lunak
+                </p>
+
+                <p className="mt-3 leading-7 text-slate-600">
+                  Saya sedang menempuh pendidikan di jurusan Rekayasa
+                  Perangkat Lunak dan mempelajari berbagai hal tentang
+                  pemrograman, pengembangan website, database, dan
+                  teknologi digital.
+                </p>
+
+              </div>
+
+              <span className="w-fit rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700 transition duration-300 hover:scale-110">
+                XI RPL 1
+              </span>
+
+            </div>
+
           </div>
 
         </div>
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="px-6 pb-20">
-        <div className="mx-auto max-w-5xl">
+      <section
+        id="skills"
+        className="bg-white px-6 py-24"
+      >
+        <div className="mx-auto max-w-6xl">
 
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-sky-600">
-            My Skills
-          </p>
+          <div className="text-center">
 
-          <h2 className="text-3xl font-black sm:text-4xl">
-            Things I work with.
-          </h2>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
+              Skills
+            </p>
 
-          <div className="mt-7 flex flex-wrap gap-3">
-            {skills.map((skill, index) => (
-              <div
-                key={skill}
-                className="rounded-full border border-zinc-200 bg-white px-5 py-3 text-xs font-bold shadow-sm transition duration-300 hover:-translate-y-1 hover:border-violet-300 hover:text-violet-600"
-                style={{
-                  animation: "fadeUp 0.6s ease-out both",
-                  animationDelay: `${index * 0.1}s`,
-                }}
-              >
-                {skill}
-              </div>
-            ))}
+            <h2 className="text-4xl font-bold">
+              Yang Sedang Saya Pelajari
+            </h2>
+
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+
+            <SkillCard
+              name="React"
+              level="Intermediate-Advanced"
+            />
+
+            <SkillCard
+              name="Next.js"
+              level="Intermediate-Advanced"
+            />
+
+            <SkillCard
+              name="TailwindCSS"
+              level="Intermediate-Advanced"
+            />
+
+            <SkillCard
+              name="IndexedDB"
+              level="Intermediate"
+            />
+
+            <SkillCard
+              name="Leaflet Maps"
+              level="Intermediate"
+            />
+
           </div>
 
         </div>
@@ -227,150 +271,221 @@ export default function Home() {
       {/* PROJECTS */}
       <section
         id="projects"
-        className="bg-zinc-900 px-6 py-20 text-white"
+        className="bg-sky-50 px-6 py-24"
       >
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl">
 
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-sky-400">
-            Selected Works
-          </p>
+          <div className="text-center">
 
-          <h2 className="text-3xl font-black sm:text-4xl">
-            My Projects
-          </h2>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
+              Portfolio
+            </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <h2 className="text-4xl font-bold">
+              My Projects
+            </h2>
 
-            {projects.map((project) => (
-              <a
-                key={project.title}
-                href="/proyek"
-                className="group overflow-hidden rounded-3xl bg-white text-zinc-900 shadow-lg transition duration-500 hover:-translate-y-2 hover:shadow-2xl"
-              >
+          </div>
 
-                <div className="overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+
+            {/* PROJECT 1 */}
+            <div className="group transition-all duration-500 hover:-translate-y-4">
+
+              <div className="overflow-hidden rounded-3xl transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-sky-200">
+
+                <div className="transition duration-500 group-hover:scale-[1.02]">
+
+                  <ProjectCard
+                    title="Manajemen Siswa"
+                    description="Konsep manajemen siswa untuk mengelola data siswa dengan melihat data siswa, kelas, rata-rata perkelas, dan pelanggaran dengan menggunakan Next.js dan Tailwind CSS."
+                    image="/project1.jpg"
                   />
+
                 </div>
 
-                <div className="p-5">
-                  <h3 className="text-lg font-black">
-                    {project.title}
-                  </h3>
+              </div>
 
-                  <p className="mt-2 text-xs leading-6 text-zinc-500">
-                    {project.description}
-                  </p>
+            </div>
 
-                  <p className="mt-4 text-xs font-bold text-sky-600">
-                    View Project →
-                  </p>
+            {/* PROJECT 2 */}
+            <div className="group transition-all duration-500 hover:-translate-y-4">
+
+              <div className="overflow-hidden rounded-3xl transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-sky-200">
+
+                <div className="transition duration-500 group-hover:scale-[1.02]">
+
+                  <ProjectCard
+                    title="Website Peta Sederhana"
+                    description="Konsep peta sederhana yang menampilkan lokasi tertentu dengan tampilan interaktif dan mudah digunakan."
+                    image="/project2.jpg"
+                  />
+
                 </div>
 
-              </a>
-            ))}
+              </div>
+
+            </div>
+
+            {/* PROJECT 3 */}
+            <div className="group transition-all duration-500 hover:-translate-y-4">
+
+              <div className="overflow-hidden rounded-3xl transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-sky-200">
+
+                <div className="transition duration-500 group-hover:scale-[1.02]">
+
+                  <ProjectCard
+                    title="Aplikasi Daftar Belanja"
+                    description="Konsep desain aplikasi daftar belanja yang dibuat menggunakan Figma."
+                    image="/project3.jpg"
+                  />
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
-        </div>
-      </section>
 
-      {/* EDUCATION */}
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-5xl">
-
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-sky-600">
-            Education
-          </p>
-
-          <div className="mt-7 rounded-[1.8rem] border border-zinc-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
-
-            <p className="text-xs font-bold text-sky-600">
-              2025 — Present
-            </p>
-
-            <h3 className="mt-2 text-xl font-black">
-              SMK Negeri 1 Kota Pasuruan
-            </h3>
-
-            <p className="mt-2 text-sm text-zinc-500">
-              Rekayasa Perangkat Lunak · XI RPL 1
-            </p>
-
-          </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="px-6 pb-20">
+      <section
+        id="contact"
+        className="bg-slate-900 px-6 py-24 text-white"
+      >
+        <div className="mx-auto max-w-4xl">
 
-        <div className="mx-auto max-w-5xl rounded-[2rem] bg-sky-600 p-7 text-white sm:p-10">
+          <div className="text-center">
 
-          <div className="grid gap-8 md:grid-cols-2 md:items-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-sky-400">
+              Contact
+            </p>
 
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-sky-200">
-                Contact
-              </p>
+            <h2 className="text-4xl font-bold">
+              Let&apos;s Connect
+            </h2>
 
-              <h2 className="mt-3 text-3xl font-black sm:text-4xl">
-                Let's create
-                <br />
-                something cool.
-              </h2>
+            <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-400">
+              Terima kasih sudah mengunjungi portfolio saya. Jika ingin
+              menghubungi saya, silakan isi form di bawah ini.
+            </p>
 
-              <p className="mt-4 text-sm leading-6 text-violet-100">
-                Have a project or idea? Feel free to contact me.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-white p-5 text-zinc-900 shadow-xl">
-
-              <a
-                href="https://instagram.com/lailiiiima"
-                target="_blank"
-                rel="noreferrer"
-                className="mb-3 block rounded-xl bg-zinc-100 px-4 py-3 text-sm font-bold transition hover:bg-violet-100 hover:text-sky-600"
-              >
-                Instagram
-                <span className="mt-1 block text-xs font-normal text-zinc-500">
-                  @lailiiiima
-                </span>
-              </a>
-
-              <a
-                href="mailto:laili@gmail.com"
-                className="mb-3 block rounded-xl bg-zinc-100 px-4 py-3 text-sm font-bold transition hover:bg-violet-100 hover:text-sky-600"
-              >
-                Email
-                <span className="mt-1 block text-xs font-normal text-zinc-500">
-                  laili@gmail.com
-                </span>
-              </a>
-
-              <a
-                href="tel:+6285702506712"
-                className="block rounded-xl bg-zinc-100 px-4 py-3 text-sm font-bold transition hover:bg-sky-100 hover:text-sky-600"
-              >
-                Phone
-                <span className="mt-1 block text-xs font-normal text-zinc-500">
-                  +62 857-0250-6712
-                </span>
-              </a>
-
-            </div>
           </div>
+
+          {/* FORM */}
+          <form className="mx-auto mt-10 grid max-w-3xl gap-5">
+
+            <div className="grid gap-5 md:grid-cols-2">
+
+              {/* NAME */}
+              <div>
+
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-semibold"
+                >
+                  Name
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-800 px-5 py-4 text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
+                />
+
+              </div>
+
+              {/* EMAIL */}
+              <div>
+
+                <label
+                  htmlFor="email"
+                  className="mb-2 block text-sm font-semibold"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-800 px-5 py-4 text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
+                />
+
+              </div>
+
+            </div>
+
+            {/* MESSAGE */}
+            <div>
+
+              <label
+                htmlFor="message"
+                className="mb-2 block text-sm font-semibold"
+              >
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows={6}
+                placeholder="Write your message..."
+                className="w-full resize-none rounded-2xl border border-slate-700 bg-slate-800 px-5 py-4 text-white outline-none transition duration-300 placeholder:text-slate-500 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20"
+              />
+
+            </div>
+
+            {/* SEND BUTTON */}
+            <button
+              type="submit"
+              className="w-fit rounded-full bg-sky-500 px-8 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-sky-400 hover:shadow-lg hover:shadow-sky-500/20"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+          {/* CONTACT LINKS */}
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+
+            <a
+              href="https://instagram.com/lailiiiima"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-sky-400 hover:shadow-lg"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="mailto:laili@gmail.com"
+              className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-sky-400 hover:shadow-lg"
+            >
+              Email
+            </a>
+
+            <a
+              href="tel:+6285702506712"
+              className="rounded-full bg-sky-500 px-7 py-3 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-sky-400 hover:shadow-lg"
+            >
+              Telepon
+            </a>
+
+          </div>
+
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-zinc-200 px-6 py-7">
-        <div className="mx-auto flex max-w-5xl flex-col justify-between gap-2 text-xs text-zinc-500 sm:flex-row">
-          <p>© 2026 Laili Majida.</p>
-          <p>Built with Next.js & Tailwind CSS.</p>
-        </div>
+      <footer className="bg-slate-950 px-6 py-6 text-center text-sm text-slate-500">
+        © 2026 Laili Majida. All rights reserved.
       </footer>
 
     </main>

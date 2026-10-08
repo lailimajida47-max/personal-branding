@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin/",
     },
-    sitemap: "https://personal-branding-orpin-xi.vercel.app/sitemap.xml",
+    sitemap: "https://www.lailimajidaa.my.id/sitemap.xml",
   };
 }

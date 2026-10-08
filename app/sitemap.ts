@@ -8,21 +8,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const projectUrls =
     projects?.map((project) => ({
-      url: `https://personal-branding-orpin-xi.vercel.app/proyek/${project.id}`,
+      url: `https://www.lailimajidaa.my.id/proyek/${project.id}`,
       lastModified: new Date(),
     })) ?? [];
 
   return [
     {
-      url: "https://personal-branding-orpin-xi.vercel.app/",
+      url: "https://www.lailimajidaa.my.id/",
       lastModified: new Date(),
     },
     {
-      url: "https://personal-branding-orpin-xi.vercel.app/about",
+      url: "https://www.lailimajidaa.my.id/about",
       lastModified: new Date(),
     },
     {
-      url: "https://personal-branding-orpin-xi.vercel.app/projects",
+      url: "https://www.lailimajidaa.my.id/projects",
       lastModified: new Date(),
     },
     ...projectUrls,
